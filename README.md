@@ -33,7 +33,8 @@ Please read for details on our code of conduct, and the process for submitting p
 
 ## Authors
 
-* **Charles Clemens** - *Initial work* - [CClemensJr](https://github.com/CClemensJr)
+* **Charles Clemens** - *Initial work* - [CClemensJr](https://github.com/CClemensJr) 
+* **Charles Clemens (Navigator) and Nick Crain (Driver)** - *Lab 04* [NJCrain](https://github.com/NJCrain)
 
 ## License
 
