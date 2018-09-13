@@ -1,20 +1,40 @@
 body {
+    margin: 0 auto;
+    width:  90%;
 }
 
-aside {
-    background-color: orangered;
-    float:              left;
-    height:             100%;
-    width:              45%;
+a {
+    text-decoration: none;
 }
 
-main {
-    background-color: deepskyblue;
-    float:              right;
-    width:              55%;
+header h1 {
+    background: #36454f;
+    color:      lightblue;
+    float:   left;
+    font-family: 'Ruslan Display', cursive;
+    font-size: 25px;
+    height:  25px;
+    padding: 10px;
+    width:   100%;
 }
 
-footer {
-    background: grey;
-    width:        100%;
+img {
+    float: left;
+    width: 50%;
+    margin: 10px 10px 10px 0px;
+}
+
+main p {
+    float: right;
+    width: 50%;
+}
+
+.legitimizers {
+    float: right;
+    width: 25%;
+}
+
+.intimacy {
+    float: left;
+    width: 100%;
 }

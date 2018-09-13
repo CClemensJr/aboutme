@@ -1,13 +1,13 @@
 //HTML
-// Convert my biographical elements into unordered elements
-// Consider adopting additional features that I have seen in the 'About Me' projects made by others, so that my 'About Me' can become more thorough and interesting than my original conception.
-// Make myself more personable by adding a Top Ten list to the bottom of my About Me page with an ordered list in HTML, for instance, my Top Ten Favorite Movies or my Top Ten Places I Want to Visit, or something along those lines.
-// Per the user stories, you will need to include in your HTML at least one each of an ordered and an unordered list.
+// -Convert my biographical elements into unordered elements
+// -Consider adopting additional features that I have seen in the 'About Me' projects made by others, so that my 'About Me' can become more thorough and interesting than my original conception.
+// -Make myself more personable by adding a Top Ten list to the bottom of my About Me page with an ordered list in HTML, for instance, my Top Ten Favorite Movies or my Top Ten Places I Want to Visit, or something along those lines.
+// -Per the user stories, you will need to include in your HTML at least one each of an ordered and an unordered list.
 // Move the guessing game to a separate HTML file, list the questions on the page, and then have the answers fill in on the page after the user provides the answers.
 
 //CSS
-// Consider the user experience (UX) of my About Me and guessing game, trying to view it through the eyes of a user.
-// Consider adopting additional features that I have seen in the 'About Me' projects made by others, so that my 'About Me' can become more thorough and interesting than my original conception.
+// -Consider the user experience (UX) of my About Me and guessing game, trying to view it through the eyes of a user.
+// -Consider adopting additional features that I have seen in the 'About Me' projects made by others, so that my 'About Me' can become more thorough and interesting than my original conception.
 // Use CSS to creatively and tastefully style and layout my page
 // Move the guessing game to a separate HTML file, list the questions on the page, and then have the answers fill in on the page after the user provides the answers.
 
