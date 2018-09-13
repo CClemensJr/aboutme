@@ -31,9 +31,11 @@ var questions =         ['Do you think I like to wear sweaters?',
                          'Do you think I like to watch football?',
                          'Do you think I like to #netflixnchill?',
                          'Do you think I am hungry?',
-                         'Do you think that I think you think web development is super special?'];
+                         'Do you think that I think you think web development is super special?',
+                         'How many martial arts do you think I have trained in?'];
 var answers =           [];
 var responses =         ['That is correct!', 'That is not the correct answer'];
+var guesses =           0;
 var score =             0;
 
 alert('Hi, my name is Charles.');
@@ -123,6 +125,44 @@ for (var i = 0; i < questions.length; i++)
                 break;
             }
 
+        case 5:
+            if (Number(answers[5]) === 5)
+            {
+                alert(responses[0]);
+                score++;
+
+                break;
+            }
+            else
+            {
+                do
+                {
+                    if (Number(answers[5]) < 5)
+                    {
+                        alert('That is too low. Please guess again.');
+
+                        answers[5] = prompt(questions[i]).toUpperCase();
+                        
+                        guesses++;
+                    }
+                    else if (Number(answers[5]) > 5)
+                    {
+                        alert('That is too high. Please guess again.');
+
+                        answers[5] = prompt(questions[i]).toUpperCase();
+                        
+                        guesses++;
+                    }
+                    else
+                    {
+                        alert(responses[0]);
+                        score++;
+
+                        break;
+                    }
+                } while (guesses < 4);
+            }  
+            break;
     }
 
 }
