@@ -15,12 +15,12 @@ var score              = 0;
 
 function askQuestions() 
 {
-    //confirm('Do you want to play a game?');
-    //alert('Hi, my name is Charles.');
-    //alert('This is a little quiz about me.')
-    //confirm('Are you ready?');
+    confirm('Do you want to play a game?');
+    alert('Hi, my name is Charles.');
+    alert('This is a little quiz about me.')
+    confirm('Are you ready?');
 
-    for (var i = 6; i < questions.length; i++)
+    for (var i = 0; i < questions.length; i++)
     {
         answers[i] = prompt(questions[i]).toUpperCase();
 
