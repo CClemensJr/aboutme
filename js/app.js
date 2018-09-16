@@ -9,13 +9,16 @@ var questionsWithYesOrNoAnswers  = ['Do you think I like to wear sweaters?',
                                     'Do you think that I think you think web development is super special?'];
 
 var multipleAnswers              = [['AIKIDO', 'TAE KWAN DO', 'KARATE', 'JEET KUNE DO', 'WING CHUN']];
-var numberAnswers                = ['5'];
+var numberAnswers                = [5];
 var userAnswers                  = [];
 var yesOrNoAnswers               = [('Y' || 'YES'), ('N' || 'NO'), ('N' || 'NO'), ('Y' || 'YES'), ('Y' || 'YES')];
 
-var responsesToUserInput         = ['That is correct!', 'That is not correct.', 'WARNING! WARNING! A QUESTION HAS NOT BEEN ASKED CORRECTLY!'];
+var responsesToYesNoInput         = ['That is correct!', 'That is not correct.']; 
+var responsesToGuessInput         = ['That is correct!', 
+                                     'That is too low. Please guess again.', 
+                                     'That is too high. Please guess again.'];
 
-var numOfUserGuesses             = 0;
+var numOfUserGuesses             = 4;
 var totalNumOfQuestions          = 7;
 var userScore                    = 0;
 
@@ -29,19 +32,17 @@ function askQuestions()
     {
         console.log('   In for (var i = 0; i < totalNumOfQuestions; i++)');
 
-        if (i < 5)
+        /*if (i < 5)
         {
             userAnswers[i] = prompt(questionsWithYesOrNoAnswers[i]).toUpperCase();
             checkYesNoAnswer(userAnswers[i], i);
         }
-        /*else if (i === 5)
+        else*/ if (i === 5)
         {
-            console.log('   In if (i === 5)');
-            console.log('       Question 5' + (i + 1) + '. ' + questionsWithNumberAnswers[0]);
-            console.log('       User answer = ' + userAnswers[i]);
-            checkNumericalGuesses(userAnswers[i], i);
+            userAnswers[i] = prompt(questionsWithNumberAnswers[0]);
+            checkNumericalGuesses(userAnswers[i]);
         }
-        else if (i === 6)
+        /*else if (i === 6)
         {
             console.log('   In if (i === 6)');
             console.log('       Question ' + (i + 1) + '. ' + questions[i]);
@@ -63,21 +64,86 @@ function checkYesNoAnswer(userAnswer, questionNumber)
 {
     if (userAnswer === yesOrNoAnswers[questionNumber])
     {
-        alert(responsesToUserInput[0]);
+        alert(responsesToYesNoInput[0]);
+
         userScore++;
     }
     else
     {
-        alert(responsesToUserInput[1]);
+        alert(responsesToYesNoInput[1]);
     }
 }
 
-function checkNumericalGuesses(userAnswer, questionNumber)
+function checkNumericalGuesses(userAnswer)
 {
-    console.log('   In function checkNumericalGuesses(userAnswer, questionNumber)');
-    console.log('       User Answer = ' + userAnswer);
-    console.log('       Question Number = ' + questionNumber + 1);
+    if (Number(userAnswer) === numberAnswers[0] && numOfUserGuesses !== 0)
+    {
+        alert(responsesToGuessInput[0]);
+
+        userScore++;
+
+        numOfUserGuesses = 0;
+    }
+
+    while (numOfUserGuesses > 0)
+    {
+        (Number(userAnswer) < 5) ? alert(responsesToGuessInput[1] + ' ' + numOfUserGuesses + ' guesses left') : 
+                                    alert(responsesToGuessInput[2] + ' ' + numOfUserGuesses + ' guesses left');
+
+        numOfUserGuesses--;
+
+        userAnswer = prompt(questionsWithNumberAnswers[0]);
+
+        checkNumericalGuesses(userAnswer);
+    } 
 }
+        /*
+            if (Number(userAnswer) < 5)
+            {
+                guesses--;
+                alert(responsesToUserInput[2]);
+
+                userAnswer = prompt(questionsWithNumberAnswers[0]);
+            }
+            else
+
+        }
+        do
+        {
+            if (Number(userAnswer) < 5)
+            {
+                alert('That is too low. Please guess again.');
+                guesses--;
+
+                answers[5] = prompt(questions[num]).toUpperCase();
+                
+                guesses++;
+            }
+            else if (Number(answers[5]) > 5)
+            {
+                alert('That is too high. Please guess again.');
+
+                answers[5] = prompt(questions[num]).toUpperCase();
+                
+                guesses++;
+            }
+            else if (Number(answers[5]) === 5)
+            {
+                alert(responses[0]);
+
+                score++;
+
+                break;
+            }
+            else
+            {
+                alert('Please enter a number.')
+
+                answers[5] = prompt(questions[num]).toUpperCase();
+
+                guesses++;
+            }
+        } while (guesses < 3);*/
 
 function checkManyPossibleAnswers(userAnswer, questionNumber)
 {
