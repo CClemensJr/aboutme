@@ -1,44 +1,134 @@
 'use strict';
 
-var questions          = ['Do you think I like to wear sweaters?',
-                          'Do you think I like to watch football?',
-                          'Do you think I like to #netflixnchill?',
-                          'Do you think I am hungry?',
-                          'Do you think that I think you think web development is super special?',
-                          'How many martial arts do you think I have trained in?',
-                          'Can you guess which ones?'];
-var answers            = [];
-var responses          = ['That is correct!', 'That is not the correct answer'];
-var martialArtsStudied = ['AIKIDO', 'TAE KWAN DO', 'KARATE', 'JEET KUNE DO', 'WING CHUN'];
-var guesses            = 0;
-var score              = 0;
+var questionsWithNumberAnswers   = ['How many martial arts do you think I have trained in?'];
+var questionsWithMultipleAnswers = ['Can you guess which martial arts I have trained in?'];
+var questionsWithYesOrNoAnswers  = ['Do you think I like to wear sweaters?',
+                                    'Do you think I like to watch football?',
+                                    'Do you think I like to #netflixnchill?',
+                                    'Do you think I am hungry?',
+                                    'Do you think that I think you think web development is super special?'];
+
+var multipleAnswers              = [['AIKIDO', 'TAE KWAN DO', 'KARATE', 'JEET KUNE DO', 'WING CHUN']];
+var numberAnswers                = ['5'];
+var userAnswers                  = [];
+var yesOrNoAnswers               = [('Y' || 'YES'), ('N' || 'NO'), ('N' || 'NO'), ('Y' || 'YES'), ('Y' || 'YES')];
+
+var responsesToUserInput         = ['That is correct!', 'That is not correct.', 'WARNING! WARNING! A QUESTION HAS NOT BEEN ASKED CORRECTLY!'];
+
+var numOfUserGuesses             = 0;
+var totalNumOfQuestions          = 7;
+var userScore                    = 0;
 
 function askQuestions() 
 {
-    confirm('Do you want to play a game?');
-    alert('Hi, my name is Charles.');
-    alert('This is a little quiz about me.')
-    confirm('Are you ready?');
+    console.log('In function askQuestions()');
+    //alert('Hi, my name is Charles.');
+    //alert('This is a little quiz that future employers can use to get to know me just a little better.')
 
-    for (var i = 0; i < questions.length; i++)
+    for (var i = 0; i < totalNumOfQuestions; i++)
     {
-        answers[i] = prompt(questions[i]).toUpperCase();
+        console.log('   In for (var i = 0; i < totalNumOfQuestions; i++)');
 
-        console.log('The user answered ' + answers[i] + ' to Question ' + (i + 1) + '. ' + questions[i]);
-
-        checkAnswers(i);
-
+        if (i < 5)
+        {
+            userAnswers[i] = prompt(questionsWithYesOrNoAnswers[i]).toUpperCase();
+            checkYesNoAnswer(userAnswers[i], i);
+        }
+        /*else if (i === 5)
+        {
+            console.log('   In if (i === 5)');
+            console.log('       Question 5' + (i + 1) + '. ' + questionsWithNumberAnswers[0]);
+            console.log('       User answer = ' + userAnswers[i]);
+            checkNumericalGuesses(userAnswers[i], i);
+        }
+        else if (i === 6)
+        {
+            console.log('   In if (i === 6)');
+            console.log('       Question ' + (i + 1) + '. ' + questions[i]);
+            console.log('       User answer = ' + userAnswers[i]);
+            checkManyPossibleAnswers(userAnswers[i], i);
+        }
+        else
+        {
+            alert(responses[2]);
+        }*/
     }
 
     alert('It will be a moment while I tally your results.'); 
-
-    alert('You scored ' + score + ' out of 5 correctly.');
+    alert('You answered ' + userScore + ' out of 7 questions correctly.');
 }
 
 
-function checkAnswers(num) 
+function checkYesNoAnswer(userAnswer, questionNumber) 
 {
-    switch (num)
+    if (userAnswer === yesOrNoAnswers[questionNumber])
+    {
+        alert(responsesToUserInput[0]);
+        userScore++;
+    }
+    else
+    {
+        alert(responsesToUserInput[1]);
+    }
+}
+
+function checkNumericalGuesses(userAnswer, questionNumber)
+{
+    console.log('   In function checkNumericalGuesses(userAnswer, questionNumber)');
+    console.log('       User Answer = ' + userAnswer);
+    console.log('       Question Number = ' + questionNumber + 1);
+}
+
+function checkManyPossibleAnswers(userAnswer, questionNumber)
+{
+    console.log('   In function checkManyPossibleAnswers(userAnswer, questionNumber)');
+    console.log('       User Answer = ' + userAnswer);
+    console.log('       Question Number = ' + questionNumber + 1);
+}
+
+    /*for (var i = 0; i < answers.length; i++)
+    {
+        console.log('   In loop i');
+
+        if (userAnswer === correctAnswers[i])
+        {
+            console.log('   In loop i if statement.');
+            console.log('       correctAnswer = ' + correctAnswers[i]);
+            
+            alert(responses[0]);
+            score++;
+
+            break;
+        }
+        else
+        {
+            console.log('   In loop i else statement.');
+            console.log('       correctAnswer = ' + correctAnswers[i]);
+            alert(responses[1]);
+        }*/
+
+        /*for (var j = 0; j < correctAnswers.length; j++)
+        {
+            console.log('In j for loop');   
+            if (userAnswer.startsWith(correctAnswers[j]))
+            {
+                console.log('In if statement');
+                alert(responses[0]);
+                score++;
+
+                break;
+            }
+            else
+            {
+                console.log('In else statement');
+                alert(responses[1]);
+
+                break;
+            }
+        }
+        break;
+    }*/
+    /*switch (num)
     {
         case 0:
             if ((answers[0] === 'Y' || answers[0] === 'YES'))
@@ -210,7 +300,7 @@ function checkAnswers(num)
             }
 
             break;
-    }
-}
+    }*/
 
 askQuestions();
+
