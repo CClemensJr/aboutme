@@ -1,40 +1,17 @@
-body {
-    background: beige;
-    width:        90%;
+#top-page {
+    background: red;
+    height    : 1000px;
+    width     : 100%;
 }
 
-a {
-    text-decoration: none;
+#middle-page {
+    background: blue;
+    height    : 1000px;
+    width     : 100%;
 }
 
-header h1 {
-    background: #36454f;
-    color:      lightblue;
-    float:   left;
-    font-family: 'Ruslan Display', cursive;
-    font-size: 25px;
-    height:  25px;
-    padding: 10px;
-    width:   100%;
-}
-
-img {
-    float: left;
-    width: 50%;
-    margin: 10px 10px 10px 0px;
-}
-
-main p {
-    float: right;
-    width: 50%;
-}
-
-.legitimizers {
-    float: right;
-    width: 25%;
-}
-
-.intimacy {
-    float: left;
-    width: 100%;
+#bottom-page {
+    background: green;
+    height    : 1000px;
+    width     : 100%;
 }
