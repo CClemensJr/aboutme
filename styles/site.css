@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+
+/**
+***   Top Page
+***/
 #top-page {
     background: white;
     display   : inline-block;
@@ -49,9 +53,9 @@
 }
 
 
-
-
-
+/**
+***   Middle Page
+***/
 #middle-page {
     background: blue;
     height    : 1000px;
@@ -90,13 +94,52 @@
     margin-top: 50px;
 }
 
-#middle-page .bottom-link {
 
-}
-
+/**
+***   Bottom Page
+***/
 
 #bottom-page {
     background: green;
     height    : 1000px;
+    padding   : 15%;
     width     : 100%;
+}
+
+
+#bottom-page .top-link {
+    background: red;
+}
+
+#bottom-page .middle-link {
+    background: yellow;
+}
+
+#bottom-page div {
+    display: inline-block;
+    background: orange;
+    width: 100%;
+}
+#bottom-page div div:first-child
+{
+    background: silver;
+    float: left;
+    height: 500px;
+    width: 33.33%;
+}
+
+#bottom-page div div:nth-child(2)
+{
+    background: gray;
+    float: left;
+    height: 500px;
+    width: 33.33%;
+}
+
+#bottom-page div div:last-child
+{
+    background: lightgray;
+    float: right;
+    height: 500px;
+    width: 33.33%;
 }
