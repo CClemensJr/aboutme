@@ -55,8 +55,45 @@
 #middle-page {
     background: blue;
     height    : 1000px;
+    padding   : 15%;
     width     : 100%;
 }
+
+#middle-page div:nth-child(2) {
+    display: inline-block;
+}
+
+
+#middle-page div div:nth-child(1) {
+    background : silver;
+    float: left;
+    height: 500px;
+    width: 375px;
+}
+
+#middle-page div div:nth-child(2) {
+    background  : green;
+    float: right;
+    height: 500px;
+    width: 375px;
+}
+
+
+#middle-page .top-link, .bottom-link{
+    background: red;
+    display   : block;
+    text-align: center;
+    
+}
+
+#middle-page .top-link {
+    margin-top: 50px;
+}
+
+#middle-page .bottom-link {
+
+}
+
 
 #bottom-page {
     background: green;
